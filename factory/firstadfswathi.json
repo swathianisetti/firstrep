@@ -1,0 +1,9 @@
+{
+	"name": "firstadfswathi",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "42dcaff9-7f3a-441c-9816-4de06276c28a",
+		"tenantId": "11809cb3-d6fe-4dab-9472-b03186a421b4"
+	}
+}

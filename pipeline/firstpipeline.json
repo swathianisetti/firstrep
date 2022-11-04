@@ -1,0 +1,40 @@
+{
+	"name": "firstpipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-31.centralus.logic.azure.com:443/workflows/328efacd525c47ca8791b90d44e1c250/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=kZw21m1VWmkYIO3rW8L9sxbwqypb_txMhGR8wjKyLoI",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"value": "{\n    \"to\":\"@{pipeline().parameters.tomail}\",\n    \"subject\":\"test\",\n    \"emailbody\":\"check\"\n}",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"tomail": {
+				"type": "String",
+				"defaultValue": "anishetti.swathi27@gmail.com"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-11-04T23:50:46Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
